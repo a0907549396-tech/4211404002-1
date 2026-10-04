@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>想你電台｜臺中西區手沖咖啡與自製甜點</title>
+<meta name="description" content="想你電台位於臺中市西區，插座充足、Wi-Fi 穩定、平日下午不限時，提供手沖咖啡與自製甜點。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500&family=Noto+Serif+TC:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --deep:#0A2342; --navy:#123A68; --sea:#3F7FB5; --sky:#8EC5E8; --mist:#D6ECF8; --foam:#F3FAFD; --ink:#0E2A47;
+  --serif:"Noto Serif TC","Songti TC","PMingLiU",serif;
+  --sans:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+  --wrap:min(1080px,100% - 2.5rem);
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:4rem}
+body{font-family:var(--sans);color:var(--ink);background:var(--foam);line-height:1.8;font-size:1.0625rem}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--sky);outline-offset:3px}
+h1,h2,h3{font-family:var(--serif);line-height:1.35}
+.wrap{width:var(--wrap);margin-inline:auto}
+section{padding:5rem 0}
+h2{font-size:clamp(1.6rem,4vw,2.2rem);margin-bottom:.4rem;color:var(--deep)}
+.lead{max-width:34em;color:#35597c;margin-bottom:2.5rem}
+
+/* header */
+header{position:sticky;top:0;z-index:10;background:rgba(10,35,66,.94);backdrop-filter:blur(6px)}
+header .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.8rem 0}
+.brand{font-family:var(--serif);font-weight:700;color:#fff;text-decoration:none;letter-spacing:.08em}
+nav ul{list-style:none;padding:0;display:flex;gap:1.4rem;font-size:.95rem}
+nav a{color:var(--mist);text-decoration:none;padding:.3rem 0;border-bottom:2px solid transparent}
+nav a:hover{border-color:var(--sky)}
+
+/* hero */
+.hero{position:relative;overflow:hidden;background:linear-gradient(180deg,var(--deep) 0%,var(--navy) 100%);color:#fff;padding:6rem 0 9rem}
+.dial{display:flex;align-items:flex-end;gap:2px;height:22px;margin-bottom:2rem;max-width:420px}
+.dial i{flex:1;background:var(--sky);opacity:.55;height:35%}
+.dial i:nth-child(5n+1){height:70%;opacity:.9}
+.dial i.on{background:#fff;height:100%;opacity:1}
+.hero h1{font-size:clamp(2.6rem,9vw,5rem);letter-spacing:.14em;font-weight:700}
+.hero p.tag{font-family:var(--serif);font-size:clamp(1.1rem,3vw,1.5rem);color:var(--mist);margin:1rem 0 .6rem}
+.hero p.sub{max-width:30em;color:#b9d6ea}
+.btns{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2rem}
+.btn{display:inline-block;padding:.7rem 1.5rem;border-radius:999px;text-decoration:none;font-weight:500;border:2px solid var(--sky);transition:background .2s,color .2s}
+.btn.fill{background:var(--sky);color:var(--deep)}
+.btn.fill:hover{background:#fff;border-color:#fff}
+.btn.line{color:#fff}.btn.line:hover{background:rgba(142,197,232,.2)}
+.waves{position:absolute;left:0;right:0;bottom:-1px;height:130px;pointer-events:none}
+.waves svg{position:absolute;bottom:0;width:200%;height:100%;animation:drift 22s linear infinite}
+.waves svg:nth-child(1){opacity:.35;animation-duration:30s}
+.waves svg:nth-child(2){opacity:.6;animation-duration:20s;animation-direction:reverse}
+@keyframes drift{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.waves svg{animation:none}html{scroll-behavior:auto}}
+
+/* about */
+.about .wrap{display:grid;grid-template-columns:1.1fr 1fr;gap:3rem;align-items:center}
+.about p+p{margin-top:1rem}
+.quote{background:var(--mist);border-left:6px solid var(--sea);padding:2rem;border-radius:0 1.5rem 1.5rem 0;font-family:var(--serif);font-size:1.2rem;color:var(--deep)}
+
+/* menu */
+.menu{background:#fff}
+.cols{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.col{background:var(--foam);border:1px solid var(--mist);border-radius:1.25rem;padding:1.8rem}
+.col h3{font-size:1.3rem;color:var(--navy);padding-bottom:.7rem;margin-bottom:.8rem;border-bottom:2px solid var(--sky)}
+.col ul{list-style:none;padding:0}
+.col li{display:flex;justify-content:space-between;gap:1rem;padding:.55rem 0;border-bottom:1px dashed #bfdcee}
+.col li:last-child{border:0}
+.col small{display:block;color:#5b7e9c;font-size:.85rem;line-height:1.5}
+.price{font-variant-numeric:tabular-nums;color:var(--navy);font-weight:500;white-space:nowrap}
+.note{margin-top:1.5rem;font-size:.9rem;color:#5b7e9c}
+
+/* facilities */
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem}
+.card{background:#fff;border-radius:1.25rem;padding:1.6rem;border-top:5px solid var(--sea)}
+.card h3{font-size:1.15rem;margin-bottom:.4rem;color:var(--navy)}
+.card p{font-size:.95rem;color:#3d5f80}
+
+/* hours */
+.hours{background:var(--deep);color:#fff}
+.hours h2{color:#fff}.hours .lead{color:#b9d6ea}
+.hours .wrap{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+table{width:100%;border-collapse:collapse}
+th,td{text-align:left;padding:.8rem 0;border-bottom:1px solid rgba(142,197,232,.3)}
+th{font-weight:500;color:var(--sky)}
+.free{background:rgba(142,197,232,.15);border-radius:1.25rem;padding:1.8rem}
+.free h3{color:var(--sky);margin-bottom:.5rem}
+
+/* contact */
+.contact{text-align:center}
+.contact .lead{margin-inline:auto}
+.info{list-style:none;padding:0;display:grid;gap:1rem;max-width:520px;margin:0 auto 2rem;text-align:left}
+.info li{background:#fff;border-radius:1rem;padding:1rem 1.4rem;display:flex;gap:1rem;align-items:baseline}
+.info b{color:var(--sea);min-width:3em;font-weight:500}
+.info a{color:var(--navy);font-weight:500;text-underline-offset:4px}
+.contact .btn.fill{background:var(--navy);color:#fff;border-color:var(--navy)}
+.contact .btn.fill:hover{background:var(--sea);border-color:var(--sea)}
+
+footer{background:var(--deep);color:#9fc3de;text-align:center;padding:2rem 0;font-size:.9rem}
+
+@media (max-width:900px){
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .cols{grid-template-columns:1fr}
+}
+@media (max-width:720px){
+  section{padding:3.5rem 0}
+  nav{display:none}
+  .about .wrap,.hours .wrap,.grid{grid-template-columns:1fr}
+  .hero{padding:4rem 0 7rem}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="#top">想你電台</a>
+    <nav aria-label="主選單">
+      <ul>
+        <li><a href="#about">關於我們</a></li>
+        <li><a href="#menu">菜單</a></li>
+        <li><a href="#space">空間設備</a></li>
+        <li><a href="#hours">營業資訊</a></li>
+        <li><a href="#contact">聯絡我們</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- 1. Hero -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap">
+      <div class="dial" aria-hidden="true">
+        <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+      </div>
+      <h1 id="hero-title">想你電台</h1>
+      <p class="tag">調到安靜的頻率，慢慢喝一杯。</p>
+      <p class="sub">臺中西區的手沖咖啡店。插座夠多、網路穩定，平日下午不限時，工作或發呆都可以。</p>
+      <div class="btns">
+        <a class="btn fill" href="#menu">看菜單</a>
+        <a class="btn line" href="#contact">怎麼來</a>
+      </div>
+    </div>
+    <div class="waves" aria-hidden="true">
+      <svg viewBox="0 0 1200 130" preserveAspectRatio="none"><path fill="#8EC5E8" d="M0 70 Q150 20 300 70 T600 70 T900 70 T1200 70 V130 H0Z"/></svg>
+      <svg viewBox="0 0 1200 130" preserveAspectRatio="none"><path fill="#F3FAFD" d="M0 90 Q150 50 300 90 T600 90 T900 90 T1200 90 V130 H0Z"/></svg>
+    </div>
+  </section>
+
+  <!-- 2. 關於我們 -->
+  <section class="about" id="about" aria-labelledby="about-title">
+    <div class="wrap">
+      <div>
+        <h2 id="about-title">關於我們</h2>
+        <p>想你電台在臺中市西區，從火車站步行大約 20 分鐘。路程不近，所以來的人通常是想好好待一陣子。</p>
+        <p>我們用手沖沖每一杯咖啡，甜點由店裡自己做。店裡不放大聲的音樂，讓你專心工作，或只是安靜待著。</p>
+      </div>
+      <blockquote class="quote">像收音機慢慢轉到一個剛好的頻率，想到的人，就坐下來吧。</blockquote>
+    </div>
+  </section>
+
+  <!-- 3. 菜單 -->
+  <section class="menu" id="menu" aria-labelledby="menu-title">
+    <div class="wrap">
+      <h2 id="menu-title">菜單</h2>
+      <p class="lead">咖啡每杯現沖，甜點每天限量供應。</p>
+      <div class="cols">
+        <article class="col">
+          <h3>咖啡</h3>
+          <ul>
+            <li><span>手沖單品<small>淺焙・花果香</small></span><span class="price">NT$ 150</span></li>
+            <li><span>手沖單品<small>中焙・堅果巧克力</small></span><span class="price">NT$ 150</span></li>
+            <li><span>冰滴咖啡</span><span class="price">NT$ 140</span></li>
+            <li><span>拿鐵</span><span class="price">NT$ 130</span></li>
+          </ul>
+        </article>
+        <article class="col">
+          <h3>非咖啡</h3>
+          <ul>
+            <li><span>海鹽奶蓋可可</span><span class="price">NT$ 130</span></li>
+            <li><span>藍柑橘氣泡飲<small>淺藍色，微酸清爽</small></span><span class="price">NT$ 120</span></li>
+            <li><span>手沖茶</span><span class="price">NT$ 110</span></li>
+            <li><span>鮮奶茶</span><span class="price">NT$ 120</span></li>
+          </ul>
+        </article>
+        <article class="col">
+          <h3>甜點</h3>
+          <ul>
+            <li><span>檸檬塔<small>自製</small></span><span class="price">NT$ 140</span></li>
+            <li><span>巴斯克乳酪蛋糕<small>自製</small></span><span class="price">NT$ 150</span></li>
+            <li><span>布朗尼<small>自製</small></span><span class="price">NT$ 100</span></li>
+            <li><span>今日手工餅乾</span><span class="price">NT$ 60</span></li>
+          </ul>
+        </article>
+      </div>
+      <p class="note">※ 品項與價格為示意，請替換成店內實際菜單。</p>
+    </div>
+  </section>
+
+  <!-- 4. 空間設備 -->
+  <section id="space" aria-labelledby="space-title">
+    <div class="wrap">
+      <h2 id="space-title">空間設備</h2>
+      <p class="lead">帶著電腦來，也可以只帶一本書。</p>
+      <div class="grid">
+        <article class="card"><h3>插座充足</h3><p>多數座位旁都有插座，筆電、手機一起充。</p></article>
+        <article class="card"><h3>Wi-Fi 穩定</h3><p>視訊會議、傳大檔案都不怕斷線。</p></article>
+        <article class="card"><h3>平日下午不限時</h3><p>平日下午想坐多久都可以，低消一杯飲品即可。</p></article>
+        <article class="card"><h3>安靜的氣氛</h3><p>音量放得很低，適合閱讀、寫作和專心工作。</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. 營業資訊 -->
+  <section class="hours" id="hours" aria-labelledby="hours-title">
+    <div class="wrap">
+      <div>
+        <h2 id="hours-title">營業資訊</h2>
+        <p class="lead">出門前請先確認今日是否營業。</p>
+        <!-- 請替換為實際營業時間 -->
+        <table>
+          <caption class="sr" style="position:absolute;left:-9999px">營業時間表</caption>
+          <tr><th scope="row">週一至週五</th><td>12:00 – 20:00</td></tr>
+          <tr><th scope="row">週六、週日</th><td>11:00 – 21:00</td></tr>
+          <tr><th scope="row">公休</th><td>每週三（示意）</td></tr>
+        </table>
+      </div>
+      <aside class="free">
+        <h3>用餐時間說明</h3>
+        <p>平日下午不限時。假日和人多的時段，可能會請你協助控制用餐時間，謝謝你的體諒。</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 6. 聯絡與行動 -->
+  <section class="contact" id="contact" aria-labelledby="contact-title">
+    <div class="wrap">
+      <h2 id="contact-title">聯絡與行動</h2>
+      <p class="lead">從臺中火車站步行約 20 分鐘。想先確認座位或營業時間，可以直接打電話。</p>
+      <ul class="info">
+        <li><b>地址</b>
+          <a href="https://www.google.com/maps/search/?api=1&query=%E6%83%B3%E4%BD%A0%E9%9B%BB%E5%8F%B0+%E5%8F%B0%E4%B8%AD%E5%B8%82%E8%A5%BF%E5%8D%80" target="_blank" rel="noopener noreferrer">臺中市西區（請填入完整地址）</a>
+        </li>
+        <li><b>電話</b>
+          <a href="tel:+886400000000">04-0000-0000</a>
+        </li>
+      </ul>
+      <div class="btns" style="justify-content:center">
+        <a class="btn fill" href="https://www.google.com/maps/search/?api=1&query=%E6%83%B3%E4%BD%A0%E9%9B%BB%E5%8F%B0+%E5%8F%B0%E4%B8%AD%E5%B8%82%E8%A5%BF%E5%8D%80" target="_blank" rel="noopener noreferrer">用 Google 地圖導航</a>
+        <a class="btn fill" href="tel:+886400000000">撥打電話</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026 想你電台（4211404002）｜臺中市西區</p>
+  </div>
+</footer>
+
+</body>
+</html>
